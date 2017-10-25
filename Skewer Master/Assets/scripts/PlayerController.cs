@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour {
 
 	Vector3 move = Vector3.zero;
 	float duration;					// duration of the effect
-	float score;
+	static float score;
 
-	bool cowEffect;					// make the key opposite
+	bool cowEffect;					// make the key reverse
 
-	string []combination;			// Determines if the player has all the food
+	string []combinationLevel1;			// Determines if the player has all the food for level 1
+	string []combinationLevel2;			// Determines if the player has all the food for level 2
+	string []combinationLevel3;			// Determines if the player has all the food for level 3
 
 	public Text scoreText;				// Displays the score
 	public float offsetY;			// How much space player is moving
