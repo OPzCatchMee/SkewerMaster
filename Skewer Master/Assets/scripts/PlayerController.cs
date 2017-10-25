@@ -74,6 +74,8 @@ public class PlayerController : MonoBehaviour {
 
 	// Collision detected - Update score/ trigger object effects
 	void OnTriggerEnter2D(Collider2D collider) {
+		scoreText.text = "Score: " + score.ToString ();		// Displays the score
+
 		switch (collider.gameObject.tag) {
 		case "Chicken":
 			score += 100;
