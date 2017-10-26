@@ -21,26 +21,31 @@ public class Spawning : MonoBehaviour {
 		InvokeRepeating ("SpawningIngredients", spawnTime, repeatSpawn);
 	}
 
-	// Update is called once per frame
-	void FixedUpdate () {
+	void SpawningIngredients() {
 		randomNum = Random.Range (minimum, maximum);
 		lane = Random.Range (-4, 1);
-	}
-
-	void SpawningIngredients() {
 
 		switch (randomNum) {
 		case 1:				// Chicken
-			Instantiate (chicken, new Vector2 (40.0f, lane), transform.rotation);
+			Instantiate (chicken, new Vector2 (40.0f, lane), Quaternion.identity);
 			break;
 		case 2:				// Onion
-			Instantiate (onion, new Vector2 (40.0f, lane), transform.rotation);
+			Instantiate (onion, new Vector2 (40.0f, lane), Quaternion.identity);
 			break;
 		case 3:				// Pepper
-			Instantiate (pepper, new Vector2 (40.0f, lane), transform.rotation);
+			Instantiate (pepper, new Vector2 (40.0f, lane), Quaternion.identity);
 			break;
 		case 4:				// Cow
 			Instantiate (cow, new Vector2 (40.0f, lane), Quaternion.identity);
+			break;
+		case 5:				// Pork
+			
+			break;
+		case 6:				// Steak
+			
+			break;
+		case 7:				//Mushroom
+			
 			break;
 		default:
 			break;

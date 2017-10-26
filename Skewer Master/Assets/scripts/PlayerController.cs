@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 
 	Vector3 move = Vector3.zero;
 	float duration;					// duration of the effect
-	static float score;
+	static int score;
 
 	bool cowEffect;					// make the key reverse
 
@@ -16,17 +16,22 @@ public class PlayerController : MonoBehaviour {
 	string []combinationLevel3;			// Determines if the player has all the food for level 3
 
 	public Text scoreText;				// Displays the score
+	public Text timer;					// Displays the count down
 	public float offsetY;			// How much space player is moving
+	public float timerLevel_1;
 
 	// Use this for initialization
 	void Start () {
 		cowEffect = false;
-		SetScoreText ();
+		SetText ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		duration += Time.deltaTime;
+		timerLevel_1 -= Time.deltaTime;
+		timer.text = "Timer: " + timerLevel_1.ToString ();
+
 		if (cowEffect) {
 			if (Input.GetKeyDown (KeyCode.DownArrow)) {
 				if (transform.position.y >= 0) {
@@ -110,8 +115,13 @@ public class PlayerController : MonoBehaviour {
 			
 	}
 
-	void SetScoreText() {
+	public void SetText() {
 		scoreText.text = "Score: " + score.ToString ();
+		timer.text = "Timer: " + timerLevel_1.ToString ();
+	}
+
+	public int GetScore() {
+		return score;
 	}
 
 }
