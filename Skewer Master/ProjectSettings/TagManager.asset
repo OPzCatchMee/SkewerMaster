@@ -8,9 +8,9 @@ TagManager:
   - Onion
   - Pepper
   - Cow
-  - Pork
   - Steak
   - Mushroom
+  - Bacon
   layers:
   - Default
   - TransparentFX
