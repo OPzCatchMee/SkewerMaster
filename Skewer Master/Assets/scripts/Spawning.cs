@@ -19,6 +19,7 @@ public class Spawning : MonoBehaviour {
 	public GameObject bacon;
 	public GameObject steak;
 	public GameObject mushroom;
+	public GameObject sheep;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +37,7 @@ public class Spawning : MonoBehaviour {
 			maximum = 7;
 		} else if(scene.name == "Level4") {
 			minimum = 1;
-			maximum = 8;
+			maximum = 9;
 		}
 	}
 
@@ -65,6 +66,9 @@ public class Spawning : MonoBehaviour {
 			break;
 		case 7:				//Mushroom
 			Instantiate (mushroom, new Vector2 (40.0f, lane), Quaternion.identity);
+			break;
+		case 8:				//Sheep
+			Instantiate (sheep, new Vector2 (40.0f, lane), Quaternion.identity);
 			break;
 		default:
 			break;

@@ -201,6 +201,13 @@ public class PlayerController : MonoBehaviour {
 			}
 			Destroy (collider.gameObject);
 			break;
+		case "Sheep":
+			score -= 100;
+			sheepEffect = true;
+			sheepDuration = 0;
+			Destroy (collider.gameObject);
+			break;
+		break;
 		default: // Do nothing
 			break;
 		}

@@ -1432,13 +1432,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 0.5
   repeatSpawn: 0.5
-  chicken: {fileID: 1076756871176336, guid: 0326298e936a64a45b37fef4018b8262, type: 2}
-  onion: {fileID: 1613229876181444, guid: ae2bfd68bfc6a4f57a93c7a76080d7c3, type: 2}
-  pepper: {fileID: 1885957676333442, guid: afef689fe29504942ae4f69fa1ad5228, type: 2}
-  cow: {fileID: 1130251203622834, guid: 441a81d690852448babde25d58006d53, type: 2}
-  bacon: {fileID: 1872161596200546, guid: 26532bc6d5a804a659c88151de4089c1, type: 2}
-  steak: {fileID: 1820819180972146, guid: a74f64afe75114e1ba79a203bc154837, type: 2}
-  mushroom: {fileID: 1551708265127534, guid: 24e319cff7cd64b5e877735f14f3087d, type: 2}
+  chicken: {fileID: 1890333330947664, guid: 0326298e936a64a45b37fef4018b8262, type: 2}
+  onion: {fileID: 1912465669943284, guid: ae2bfd68bfc6a4f57a93c7a76080d7c3, type: 2}
+  pepper: {fileID: 1888585183032674, guid: afef689fe29504942ae4f69fa1ad5228, type: 2}
+  cow: {fileID: 1551086146941606, guid: 441a81d690852448babde25d58006d53, type: 2}
+  bacon: {fileID: 1762545046926868, guid: 26532bc6d5a804a659c88151de4089c1, type: 2}
+  steak: {fileID: 1277064222192386, guid: a74f64afe75114e1ba79a203bc154837, type: 2}
+  mushroom: {fileID: 1088654452643234, guid: 24e319cff7cd64b5e877735f14f3087d, type: 2}
+  sheep: {fileID: 1440983851617718, guid: f98eba88649574851a556f3e7b8f0937, type: 2}
 --- !u!1 &1461918152
 GameObject:
   m_ObjectHideFlags: 0
