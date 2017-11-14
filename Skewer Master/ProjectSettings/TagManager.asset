@@ -12,6 +12,7 @@ TagManager:
   - Mushroom
   - Bacon
   - Sheep
+  - Canvas
   layers:
   - Default
   - TransparentFX
@@ -60,4 +61,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Display
+    uniqueID: 1908046269
     locked: 0

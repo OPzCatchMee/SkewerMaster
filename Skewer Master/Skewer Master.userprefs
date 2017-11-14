@@ -1,14 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/ScreenResolution.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/Spawning.cs">
     <Files>
-      <File FileName="Assets/scripts/DisableIngredients.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/DisplayGameOver.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/ScreenResolution.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/PlayerController.cs" Line="120" Column="18" />
-      <File FileName="Assets/scripts/Spawning.cs" Line="40" Column="15" />
-      <File FileName="Assets/scripts/IngredientsMove.cs" Line="1" Column="1" />
       <File FileName="Assets/scripts/LoadGame.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/DisableIngredients.cs" Line="9" Column="33" />
+      <File FileName="Assets/scripts/DisplayGameOver.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/PlayerController.cs" Line="50" Column="36" />
+      <File FileName="Assets/scripts/Spawning.cs" Line="49" Column="1" />
+      <File FileName="Assets/scripts/IngredientsMove.cs" Line="24" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 	private float cowDuration;					// duration of the cow effect
 	private float sheepDuration;				// duration of the sheep effect
 	private static int score;
+	private float maxHeight;					// Max player can go
+	private float minHeight;					// Min player can go
 
 	private bool cowEffect;					// Stuns the player
 	private bool sheepEffect;				// Reverse the key
@@ -39,6 +41,10 @@ public class PlayerController : MonoBehaviour {
 		baconAcquired.SetActive (false);
 		steakAcquired.SetActive (false);
 		mushroomAcquired.SetActive (false);
+
+		// Calculate the position
+		maxHeight = Screen.height/1.6f;
+		minHeight = Screen.height/5.6f;
 	}
 	
 	// Update is called once per frame
@@ -51,9 +57,8 @@ public class PlayerController : MonoBehaviour {
 		if (sheepEffect) {
 			if (!cowEffect) {
 				if (Input.GetKeyDown (KeyCode.DownArrow)) {
-					if (transform.position.y >= 0) {
-						move.y = 0;
-						transform.position = move;
+					if (transform.position.y >= maxHeight) {
+						// Do nothing...
 					} else {
 						move.y = offsetY;
 						transform.position += move;
@@ -61,9 +66,8 @@ public class PlayerController : MonoBehaviour {
 					cowEffect = false;
 				}
 				if (Input.GetKeyDown (KeyCode.UpArrow)) {
-					if (transform.position.y <= -4) {
-						move.y = -4;
-						transform.position = move;
+					if (transform.position.y <= minHeight) {
+						// Do nothing...
 					} else {
 						move.y = offsetY;
 						transform.position -= move;
@@ -80,18 +84,16 @@ public class PlayerController : MonoBehaviour {
 		} else {
 			if (!cowEffect) {
 				if (Input.GetKeyDown (KeyCode.UpArrow)) {
-					if (transform.position.y >= 0) {
-						move.y = 0;
-						transform.position = move;
+					if (transform.position.y >= maxHeight) {
+						// Do nothing...
 					} else {
 						move.y = offsetY;
 						transform.position += move;
 					}
 				}
 				if (Input.GetKeyDown (KeyCode.DownArrow)) {
-					if (transform.position.y <= -4) {
-						move.y = -4;
-						transform.position = move;
+					if (transform.position.y <= minHeight) {
+						// Do nothing...
 					} else {
 						move.y = offsetY;
 						transform.position -= move;
