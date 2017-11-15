@@ -6,12 +6,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	private Vector3 move = Vector3.zero;
+	private Vector3 move;
 	private float cowDuration;					// duration of the cow effect
 	private float sheepDuration;				// duration of the sheep effect
 	private static int score;
-	private float maxHeight;					// Max player can go
-	private float minHeight;					// Min player can go
+	[HideInInspector]public float maxHeight;					// Max player can go
+	[HideInInspector]public float minHeight;					// Min player can go
+	[HideInInspector]public float lane_1;
+	[HideInInspector]public float lane_2;
+	[HideInInspector]public float lane_3;
+	[HideInInspector]public float lane_4;
+	[HideInInspector]public float lane_5;
 
 	private bool cowEffect;					// Stuns the player
 	private bool sheepEffect;				// Reverse the key
@@ -42,9 +47,13 @@ public class PlayerController : MonoBehaviour {
 		steakAcquired.SetActive (false);
 		mushroomAcquired.SetActive (false);
 
+
+	}
+
+	void Start() {
 		// Calculate the position
-		maxHeight = Screen.height/1.6f;
-		minHeight = Screen.height/5.6f;
+		maxHeight = 800f;
+		minHeight = 205f;
 	}
 	
 	// Update is called once per frame
@@ -58,7 +67,7 @@ public class PlayerController : MonoBehaviour {
 			if (!cowEffect) {
 				if (Input.GetKeyDown (KeyCode.DownArrow)) {
 					if (transform.position.y >= maxHeight) {
-						// Do nothing...
+						// do nothing...
 					} else {
 						move.y = offsetY;
 						transform.position += move;
@@ -67,7 +76,7 @@ public class PlayerController : MonoBehaviour {
 				}
 				if (Input.GetKeyDown (KeyCode.UpArrow)) {
 					if (transform.position.y <= minHeight) {
-						// Do nothing...
+						// do nothing...
 					} else {
 						move.y = offsetY;
 						transform.position -= move;
@@ -85,7 +94,7 @@ public class PlayerController : MonoBehaviour {
 			if (!cowEffect) {
 				if (Input.GetKeyDown (KeyCode.UpArrow)) {
 					if (transform.position.y >= maxHeight) {
-						// Do nothing...
+						// do nothing...
 					} else {
 						move.y = offsetY;
 						transform.position += move;
@@ -93,7 +102,7 @@ public class PlayerController : MonoBehaviour {
 				}
 				if (Input.GetKeyDown (KeyCode.DownArrow)) {
 					if (transform.position.y <= minHeight) {
-						// Do nothing...
+						// do nothing...
 					} else {
 						move.y = offsetY;
 						transform.position -= move;
@@ -104,7 +113,6 @@ public class PlayerController : MonoBehaviour {
 				cowEffect = false;
 			}
 		}
-			
 	}
 
 	// Collision detected - Update score/ trigger object effects
@@ -209,7 +217,6 @@ public class PlayerController : MonoBehaviour {
 			sheepDuration = 0;
 			Destroy (collider.gameObject);
 			break;
-		break;
 		default: // Do nothing
 			break;
 		}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Spawning : MonoBehaviour {
@@ -24,7 +25,7 @@ public class Spawning : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("SpawningIngredients", spawnTime, repeatSpawn);
+		InvokeRepeating ("SpawningIngredients", spawnTime, repeatSpawn); 
 
 		Scene scene = SceneManager.GetActiveScene ();
 		if(scene.name == "Level1") {
@@ -49,28 +50,36 @@ public class Spawning : MonoBehaviour {
 
 		switch (randomNum) {
 		case 1:				// Chicken
-			Instantiate (chicken, new Vector2 (Screen.width, lane), Quaternion.identity);
+			GameObject ingredientChicken = Instantiate (chicken, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientChicken.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
 		case 2:				// Onion
-			Instantiate (onion, new Vector2 (Screen.width, lane), Quaternion.identity);
+			GameObject ingredientOnion = Instantiate (onion, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientOnion.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
 		case 3:				// Pepper
-			Instantiate (pepper, new Vector2 (Screen.width, lane), Quaternion.identity);
+			GameObject ingredientPepper = Instantiate (pepper, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientPepper.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
 		case 4:				// Cow
-			Instantiate (cow, new Vector2 (Screen.width, lane), Quaternion.identity);
+			GameObject ingredientCow = Instantiate (cow, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientCow.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
 		case 5:				// Bacon
-			Instantiate (bacon, new Vector2 (Screen.width, lane), Quaternion.identity);
+			GameObject ingredientBacon = Instantiate (bacon, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientBacon.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
 		case 6:				// Steak
-			Instantiate (steak, new Vector2 (Screen.width, lane), Quaternion.identity);
+			GameObject ingredientSteak = Instantiate (steak, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientSteak.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
 		case 7:				//Mushroom
-			Instantiate (mushroom, new Vector2 (Screen.width, lane), Quaternion.identity);
+			GameObject ingredientMushroom = Instantiate (mushroom, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientMushroom.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
 		case 8:				//Sheep
-			Instantiate (sheep, new Vector2 (Screen.width, lane), Quaternion.identity);
+			GameObject ingredientSheep = Instantiate (sheep, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientSheep.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
 		default:
 			break;
@@ -79,25 +88,28 @@ public class Spawning : MonoBehaviour {
 	}
 
 	float getLane(int randomLane) {
+		float tempLane;
+
 		switch(randomLane) {
-		case 1:
-			return Screen.height / 1.6f;
+		case 1:  // 206.25 differences for each lane   825
+			tempLane = 175f;
 			break;
 		case 2:
-			return Screen.height / 2.6f;
+			tempLane = -31.25f;
 			break;
 		case 3:
-			return Screen.height / 3.6f;
+			tempLane = -237.5f;
 			break;
 		case 4:
-			return Screen.height / 4.6f;
+			tempLane = -443.75f;
 			break;
 		case 5:
-			return Screen.height / 5.6f;
+			tempLane = -650f;
 			break;
 		default:
-			return Screen.height / 5.6f;
+			tempLane = -650f;
 			break;
 		}
+		return tempLane;
 	}
 }
