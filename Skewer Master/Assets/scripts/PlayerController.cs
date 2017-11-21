@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour {
 	void Start() {
 		// Calculate the position
 		maxHeight = 800f;
-		minHeight = 205f;
+		minHeight = 300f;
 	}
 	
 	// Update is called once per frame
@@ -206,6 +206,16 @@ public class PlayerController : MonoBehaviour {
 				score += 100;
 				mushroomAcquired.SetActive (true);
 				combinationTracker++;
+				if(scene.name == "Level4") {
+					combinationTracker = 0;
+					SceneManager.LoadScene ("WinningScene");
+					chickenAcquired.SetActive (false);
+					onionAcquired.SetActive (false);
+					pepperAcquired.SetActive (false);
+					baconAcquired.SetActive (false);
+					steakAcquired.SetActive (false);
+					mushroomAcquired.SetActive (false);
+				}
 			} else {
 				score -= 100;
 			}

@@ -1422,7 +1422,7 @@ MonoBehaviour:
   scoreText: {fileID: 981477935}
   timer: {fileID: 1810358133}
   offsetY: 162.5
-  timerLevel_1: 60
+  timerLevel_1: 50
   chickenAcquired: {fileID: 1788761099}
   onionAcquired: {fileID: 1455832311}
   pepperAcquired: {fileID: 1350796379}

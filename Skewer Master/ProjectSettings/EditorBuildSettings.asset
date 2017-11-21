@@ -29,3 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/Tutorial2.unity
     guid: 675b1f2c5b3ca49aeb3b195f1268fde8
+  - enabled: 1
+    path: Assets/scenes/WinningScene.unity
+    guid: 73c46dff8b353431e9b341849e946799

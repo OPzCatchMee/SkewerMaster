@@ -53,7 +53,6 @@
   <ItemGroup>
      <Compile Include="Assets\scripts\DisableIngredients.cs" />
      <Compile Include="Assets\scripts\DisplayGameOver.cs" />
-     <Compile Include="Assets\scripts\FullScreen.cs" />
      <Compile Include="Assets\scripts\IngredientsMove.cs" />
      <Compile Include="Assets\scripts\LoadGame.cs" />
      <Compile Include="Assets\scripts\PlayerController.cs" />
