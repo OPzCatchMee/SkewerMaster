@@ -117,7 +117,6 @@ public class PlayerController : MonoBehaviour {
 
 	// Collision detected - Update score/ trigger object effects
 	void OnTriggerEnter2D(Collider2D collider) {
-		scoreText.text = "Score: " + score.ToString ();		// Displays the score
 		Scene scene = SceneManager.GetActiveScene ();
 
 		switch (collider.gameObject.tag) {
@@ -129,6 +128,7 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				score -= 100;
 			}
+			scoreText.text = "Score: " + score.ToString ();		// Displays the score
 			Destroy (collider.gameObject);
 			break;
 		case "Onion":
@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				score -= 100;
 			}
+			scoreText.text = "Score: " + score.ToString ();		// Displays the score
 			Destroy (collider.gameObject);
 			break;
 		case "Pepper":
@@ -156,12 +157,14 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				score -= 100;
 			}
+			scoreText.text = "Score: " + score.ToString ();		// Displays the score
 			Destroy (collider.gameObject);
 			break;
 		case "Cow":
 			score -= 100;
 			cowEffect = true;
 			cowDuration = 0;
+			scoreText.text = "Score: " + score.ToString ();		// Displays the score
 			Destroy (collider.gameObject);
 			break;
 		case "Bacon":
@@ -180,6 +183,7 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				score -= 100;
 			}
+			scoreText.text = "Score: " + score.ToString ();		// Displays the score
 			Destroy (collider.gameObject);
 			break;
 		case "Steak":
@@ -199,6 +203,7 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				score -= 100;
 			}
+			scoreText.text = "Score: " + score.ToString ();		// Displays the score
 			Destroy (collider.gameObject);
 			break;
 		case "Mushroom":
@@ -219,12 +224,14 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				score -= 100;
 			}
+			scoreText.text = "Score: " + score.ToString ();		// Displays the score
 			Destroy (collider.gameObject);
 			break;
 		case "Sheep":
 			score -= 100;
 			sheepEffect = true;
 			sheepDuration = 0;
+			scoreText.text = "Score: " + score.ToString ();		// Displays the score
 			Destroy (collider.gameObject);
 			break;
 		default: // Do nothing

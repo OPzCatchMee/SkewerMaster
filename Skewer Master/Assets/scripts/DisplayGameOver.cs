@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class DisplayGameOver : MonoBehaviour {
@@ -26,10 +27,12 @@ public class DisplayGameOver : MonoBehaviour {
 		if (player.GetScore () <= -500) {
 			GameOverByScore ();
 			Time.timeScale = 0;
+			SceneManager.LoadScene ("LosingScene");
 		}
 		if(player.GetTimerLevel1 () <= 0) {
 			GameOverByTime ();
 			Time.timeScale = 0;
+			SceneManager.LoadScene ("LosingScene");
 		}
 
 	}
