@@ -21,24 +21,21 @@ public class DisplayGameOver : MonoBehaviour {
 		gameOverTimeUp.gameObject.SetActive (false);
 		gameOverScore.gameObject.SetActive (false);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (player.GetScore () <= -500) {
 			GameOverByScore ();
-			Time.timeScale = 0;
 			SceneManager.LoadScene ("LosingScene");
 		}
 		if(player.GetTimerLevel1 () <= 0) {
 			GameOverByTime ();
-			Time.timeScale = 0;
 			SceneManager.LoadScene ("LosingScene");
 		}
 
 	}
 
 	void GameOverByScore() {
-		player.scoreText.text = "Score: -500";
 		gameOverText.gameObject.SetActive (true);
 		gameOverScore.gameObject.SetActive (true);
 	}
@@ -46,6 +43,5 @@ public class DisplayGameOver : MonoBehaviour {
 	void GameOverByTime () {
 		gameOverText.gameObject.SetActive (true);
 		gameOverTimeUp.gameObject.SetActive (true);
-		player.timer.text = "Timer: 0";
 	}
 }

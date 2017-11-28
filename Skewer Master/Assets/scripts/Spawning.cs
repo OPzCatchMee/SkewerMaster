@@ -12,6 +12,9 @@ public class Spawning : MonoBehaviour {
 	int minimum;
 	int maximum;
 
+	private AudioSource audio;
+
+	public AudioClip audioGrandmaPower;
 	public float spawnTime;
 	public float repeatSpawn;
 	public GameObject chicken;
@@ -22,9 +25,12 @@ public class Spawning : MonoBehaviour {
 	public GameObject steak;
 	public GameObject mushroom;
 	public GameObject sheep;
+	public GameObject soysauce;
+	public GameObject grandma;
 
 	// Use this for initialization
 	void Start () {
+		audio = GetComponent<AudioSource>();
 		InvokeRepeating ("SpawningIngredients", spawnTime, repeatSpawn); 
 
 		Scene scene = SceneManager.GetActiveScene ();
@@ -36,10 +42,10 @@ public class Spawning : MonoBehaviour {
 			maximum = 6;
 		} else if(scene.name == "Level3") {
 			minimum = 1;
-			maximum = 7;
+			maximum = 8;
 		} else if(scene.name == "Level4") {
 			minimum = 1;
-			maximum = 9;
+			maximum = 11;
 		}
 	}
 
@@ -73,13 +79,22 @@ public class Spawning : MonoBehaviour {
 			GameObject ingredientSteak = Instantiate (steak, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
 			ingredientSteak.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
-		case 7:				//Mushroom
+		case 7:				//Soy Sauce
+			GameObject ingredientSoySauce = Instantiate (soysauce, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientSoySauce.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
+			break;
+		case 8:				//Mushroom
 			GameObject ingredientMushroom = Instantiate (mushroom, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
 			ingredientMushroom.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
-		case 8:				//Sheep
+		case 9:				//Sheep
 			GameObject ingredientSheep = Instantiate (sheep, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
 			ingredientSheep.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
+			break;
+		case 10:				//Old lady
+			audio.PlayOneShot(audioGrandmaPower);
+			GameObject ingredientOldLady = Instantiate (grandma, new Vector2 (Screen.width, lane), Quaternion.identity) as GameObject;
+			ingredientOldLady.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 			break;
 		default:
 			break;
